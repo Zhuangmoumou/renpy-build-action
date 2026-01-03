@@ -14,15 +14,15 @@ echo $workdir
 echo "初始化SDK"
 cd ../renpy && ls
 wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.0/rapt.zip
+ls
 unzip -q rapt.zip
 chmod -R +x rapt/
 
 # 安装Android构建工具
-cd rapt/Sdk || exit 1
-./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
+./rapt/Sdk/cmdline-tools/latest/sdkmanager "build-tools;35.0.0" || exit 1
 
 # 返回初始目录
-cd "${initial_dir}" || exit 1
+cd "${workdir}" || exit 1
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
