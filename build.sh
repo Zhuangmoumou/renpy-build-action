@@ -13,7 +13,7 @@ mv ./${sdk_name} ../renpy
 echo "初始化SDK"
 cd renpy
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
-7zip x rapt.7z
+7z x rapt.7z
 rm rapt.7z
 chmod -R +x ./rapt
 cd rapt/Sdk
