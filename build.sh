@@ -4,7 +4,6 @@ sdk_name=renpy-$1-sdk
 echo "Downloading the specified SDK (${sdk_name})..."
 wget -q https://www.renpy.org/dl/$1/${sdk_name}.tar.bz2
 clear
-ping -c 4 ftp.984264.xyz
 echo "Downloaded SDK version (${sdk_name})."
 echo "Setting up the specified SDK (${sdk_name})..."
 tar -xf ./${sdk_name}.tar.bz2
@@ -13,13 +12,10 @@ mv ./${sdk_name} ../renpy
 workdir=$(pwd)
 echo $workdir
 echo "初始化SDK"
-
-# 克隆rapt仓库
-git clone https://github.com/Zhuangmoumou/renpyrapt.git ../renpyrapt
-ls ..
-ls ../renpyrapt
-mv ../renpyrapt/rapt ../renpy/
-chmod -R +x ../renpy/rapt
+cd ../renpy && ls
+wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.0/rapt.zip
+unzip -q rapt.zip
+chmod -R +x rapt/
 
 # 安装Android构建工具
 cd rapt/Sdk || exit 1
