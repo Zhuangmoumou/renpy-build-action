@@ -15,7 +15,7 @@ echo "初始化SDK"
 cd ../renpy
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
 mv renpyrapt/rapt.zip ./
-zip -q rapt.zip
+unzip -q rapt.zip
 rm rapt.zip && rm -r renpyrapt
 chmod -R +x ./rapt
 cd rapt/Sdk
