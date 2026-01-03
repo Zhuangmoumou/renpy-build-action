@@ -16,6 +16,8 @@ cd ../renpy && ls
 wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.0/rapt.zip
 ls
 unzip -q rapt.zip
+echo '----------------'
+ls
 chmod -R +x rapt/
 
 # 安装Android构建工具
