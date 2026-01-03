@@ -17,6 +17,7 @@ echo "初始化SDK"
 # 克隆rapt仓库
 git clone https://github.com/Zhuangmoumou/renpyrapt.git ../renpyrapt
 ls ..
+ls ../renpyrapt
 mv ../renpyrapt/rapt ../renpy/
 chmod -R +x ../renpy/rapt
 
