@@ -13,15 +13,17 @@ workdir=$(pwd)
 echo $workdir
 echo "初始化SDK"
 cd ../renpy && ls
+echo '------------'
 wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.0/rapt.zip
 ls
 unzip -q rapt.zip
 echo '----------------'
 ls
+rm rapt.zip
 chmod -R +x rapt/
 
 # 安装Android构建工具
-./rapt/Sdk/cmdline-tools/latest/sdkmanager "build-tools;35.0.0" || exit 1
+./rapt/Sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;35.0.0" || exit 1
 
 # 返回初始目录
 cd "${workdir}" || exit 1
