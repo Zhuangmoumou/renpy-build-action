@@ -10,14 +10,14 @@ echo "Setting up the specified SDK (${sdk_name})..."
 tar -xf ./${sdk_name}.tar.bz2
 rm ./${sdk_name}.tar.bz2
 mv ./${sdk_name} ../renpy
-
+workdir=$(pwd)
+echo $workdir
 echo "初始化SDK"
-cd ../renpy || exit 1
 
 # 克隆rapt仓库
-git clone https://github.com/Zhuangmoumou/renpyrapt.git
-mv renpyrapt/rapt ./
-chmod -R +x ./rapt
+git clone https://github.com/Zhuangmoumou/renpyrapt.git ../renpyrapt
+mv ../renpyrapt/rapt ../renpy/
+chmod -R +x ../renpy/rapt
 
 # 安装Android构建工具
 cd rapt/Sdk || exit 1
