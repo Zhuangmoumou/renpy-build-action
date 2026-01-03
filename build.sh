@@ -10,15 +10,21 @@ echo "Setting up the specified SDK (${sdk_name})..."
 tar -xf ./${sdk_name}.tar.bz2
 rm ./${sdk_name}.tar.bz2
 mv ./${sdk_name} ../renpy
-work_dir=$(pwd)
+
 echo "初始化SDK"
-cd ../renpy
+cd ../renpy || exit 1
+
+# 克隆rapt仓库
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
 mv renpyrapt/rapt ./
 chmod -R +x ./rapt
-cd rapt/Sdk
+
+# 安装Android构建工具
+cd rapt/Sdk || exit 1
 ./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
-cd ${work_dir}
+
+# 返回初始目录
+cd "${initial_dir}" || exit 1
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
