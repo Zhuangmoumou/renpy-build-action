@@ -18,7 +18,7 @@ rm rapt.7z
 chmod -R +x ./rapt
 cd rapt/Sdk
 ./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
-cd ../..
+cd ../../..
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
