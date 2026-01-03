@@ -10,15 +10,17 @@ echo "Setting up the specified SDK (${sdk_name})..."
 tar -xf ./${sdk_name}.tar.bz2
 rm ./${sdk_name}.tar.bz2
 mv ./${sdk_name} ../renpy
+work_dir=$(pwd)
 echo "初始化SDK"
-cd renpy
+cd ../renpy
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
+mv renpyrapt/rapt.7z ./
 7z x rapt.7z
 rm rapt.7z
 chmod -R +x ./rapt
 cd rapt/Sdk
 ./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
-cd ../../..
+cd ${work_dir}
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
