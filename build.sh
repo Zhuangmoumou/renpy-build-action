@@ -10,6 +10,12 @@ echo "Setting up the specified SDK (${sdk_name})..."
 tar -xf ./${sdk_name}.tar.bz2
 rm ./${sdk_name}.tar.bz2
 mv ./${sdk_name} ../renpy
+cd renpy
+git clone https://github.com/Zhuangmoumou/renpyrapt.git
+7zip x rapt.7z
+rm rapt.7z
+cd ..
+
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
