@@ -16,7 +16,7 @@ cd ../renpy
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
 mv renpyrapt/rapt.7z ./
 7z x rapt.7z
-rm rapt.7z
+rm rapt.7z && rm -r renpyrapt
 chmod -R +x ./rapt
 cd rapt/Sdk
 ./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
