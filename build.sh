@@ -14,9 +14,7 @@ work_dir=$(pwd)
 echo "初始化SDK"
 cd ../renpy
 git clone https://github.com/Zhuangmoumou/renpyrapt.git
-mv renpyrapt/rapt.zip ./
-unzip -q rapt.zip
-rm rapt.zip && rm -r renpyrapt
+mv renpyrapt/rapt ./
 chmod -R +x ./rapt
 cd rapt/Sdk
 ./cmdline-tools/latest/sdkmanager "build-tools;35.0.0"
