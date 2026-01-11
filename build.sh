@@ -3,31 +3,15 @@ export DEBIAN_FRONTEND=noninteractive
 export TZ=Asia/Shanghai
 sdk_name=renpy-$1-sdk
 echo "Downloading the specified SDK (${sdk_name})..."
-wget -q https://www.renpy.org/dl/$1/${sdk_name}.tar.bz2
+wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.1/renpy.zip
 clear
 echo "Downloaded SDK version (${sdk_name})."
 echo "Setting up the specified SDK (${sdk_name})..."
-tar -xf ./${sdk_name}.tar.bz2
-rm ./${sdk_name}.tar.bz2
-mv ./${sdk_name} ../renpy
+unzip -q ./renpy.zip
+rm ./renpy.zip
+mv ./renpy ../renpy
 workdir=$(pwd)
 echo $workdir
-echo "初始化SDK"
-cd ../renpy && ls
-echo '------------'
-wget -q https://github.com/Zhuangmoumou/renpyrapt/releases/download/1.0/rapt.zip
-ls
-unzip -q rapt.zip
-echo '----------------'
-ls
-rm rapt.zip
-chmod -R +x rapt/
-
-# 安装Android构建工具
-./rapt/Sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;35.0.0" || exit 1
-
-# 返回初始目录
-cd "${workdir}" || exit 1
 
 if [ $4 = "true" ]; then
     steam_lib_name=renpy-$1-steam
