@@ -9,6 +9,7 @@ echo "Downloaded SDK version (${sdk_name})."
 echo "Setting up the specified SDK (${sdk_name})..."
 unzip -q ./renpy.zip
 rm ./renpy.zip
+chmod -R +x ./renpy
 mv ./renpy ../renpy
 workdir=$(pwd)
 echo $workdir
